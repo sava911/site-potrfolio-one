@@ -31,7 +31,10 @@
   --project-card-bg: var(--white);
   --project-card-text: var(--black);
   --box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+
 }
+
+
 
 .dark {
   /* Dark mode */
@@ -47,8 +50,7 @@
 
 html,
 body {
-  display: flex;
-  flex-direction: column;
+
   min-height: 100vh;
 
   font-family: 'DM Sans', sans-serif;
@@ -57,6 +59,13 @@ body {
   /* Light mode */
   background-color: var(--page-bg);
   color: var(--text-color);
+}
+
+#root,
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* General */
