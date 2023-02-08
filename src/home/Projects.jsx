@@ -14,9 +14,10 @@ function Projects() {
           <h2 className="title-1">Projects</h2>
           <ul className="projects">
             {
-              projects.map(obj => (
+              projects.map((obj, index) => (
                 <Project
                   key={obj.id}
+                  index={index}
                   {...obj}
                 />
 

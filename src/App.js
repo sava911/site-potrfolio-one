@@ -1,7 +1,6 @@
 import React from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './styles/main.css';
-
-
 
 
 import NavBar from './compontnts/navBar/NavBar';
@@ -10,20 +9,28 @@ import Home from './home/Home';
 
 import Contacts from './home/Contacts';
 import Projects from './home/Projects';
-import ProjectPage from './home/ProjectPage';
+import Project from './home/Project.jsx';
+import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
+
   return (
     <div className="App">
-      <NavBar />
+      <Router>
+        <ScrollToTop />
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/project/:id' element={<Project />} />
+          <Route path='/contacts' element={<Contacts />} />
+        </Routes>
 
-      {/* <Home /> */}
-      {/* <Projects /> */}
-      {/* <Contacts /> */}
-      <ProjectPage />
-      <Footer />
 
 
+
+        <Footer />
+      </Router>
     </div>
   );
 }
