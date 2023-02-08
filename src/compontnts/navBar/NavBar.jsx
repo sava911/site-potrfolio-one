@@ -26,7 +26,7 @@ function NavBar() {
                 <NavLink to='/projects' className={({isActive}) => isActive ? activeNav : narmalNav}>Projects</NavLink>
               </li>
               <li className="nav-list__item">
-                <NavLink to='/projectPage' className={({isActive}) => isActive ? activeNav : narmalNav} >Contacts</NavLink>
+                <NavLink to='/contacts' className={({isActive}) => isActive ? activeNav : narmalNav} >Contacts</NavLink>
               </li>
             </ul>
           </div>

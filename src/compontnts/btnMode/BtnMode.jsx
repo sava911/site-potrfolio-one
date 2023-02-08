@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useLocalStorage} from './../../utils/useLocalSorage';
+import detectMode from '../detectMode';
+import './styles.css';
 import sun from './sun.svg';
 import moon from './moon.svg';
-import {useLocalStorage} from './../../utils/useLocalSorage';
-import './styles.css';
 
 
 
 function BtnMode() {
-  const [modeThem, setModeThem] = useLocalStorage('modeThem', 'light')
+  const [modeThem, setModeThem] = useLocalStorage('modeThem', detectMode())
 
   const btnRef = React.useRef(null)
   React.useEffect(() => {
@@ -19,10 +20,9 @@ function BtnMode() {
       btnRef.current.classList.remove('dark-mode-btn--active')
     }
 
-
-
-
   }, [modeThem]);
+
+
 
   const clickMode = () => {
     setModeThem(
